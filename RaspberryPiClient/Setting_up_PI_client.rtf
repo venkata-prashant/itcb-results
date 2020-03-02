@@ -1,0 +1,17 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Setting up Raspberry Pi:\
+	1. Isolate two cores from OS. To isolate cores, update the isolcpus field in /boot/cmdline.txt file.\
+	    For example, add isolcpus=2,3 to /boot/cmdline.txt file.\
+			\
+	2. Force the irq controller to execute interrupts only on non-isolated CPUs. To mask CPUs, update the bit map in file \'93/proc/irq/default_smp_affinity\'94 to the appropriate value. For example, to isolate cores 2 and 3, set the bit map in default_smp_affinity file to 3.\
+\
+	3. At each boot, load the kernel module enable_ccr.ko.\
+\
+\
+		}
